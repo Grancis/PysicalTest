@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles/loginStyle.css">
+    <script src="./jslib/login.js"></script>
+    <script src="jslib/setWidth.js"></script>
+    <title>login</title>
+</head>
+<body>
+<div id="container">
+    <h3>四川大学体侧网站</h3>
+    <div id="errorText">
+        <p id="internetError">连接失败，请检查网络</p>
+    </div>
+    <div id="loginBox">
+        <form name="loginForm">
+        <div id="userInputBox">
+            <label>账号：</label>
+            <input type="text" id="accountInput" name="user" placeholder="学号">
+        </div>
+        <div id="pwdInputBox">
+            <label>密码：</label>
+            <input type="password" id="pwdInput" name="pwd" placeholder="体侧网站密码">
+        </div>
+         <!--<div id="buttonBox">-->
+             <!--<a href="logincheck()">登录</a>-->
+         <!--</div>-->
+         <a id="loginButton" href="loginCheck()"><p>登录</p></a>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

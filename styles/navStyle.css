@@ -1,0 +1,37 @@
+#nav{
+    border-radius: 6px;
+    height: 36px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0;
+    padding: 4px;
+    background: #025a7a;
+    margin: 0 auto;
+
+}
+#nav div{
+
+    display: inline;
+    margin-top: 0;
+}
+#titleBox{
+    left: 0;
+    right: 0;
+    top: 5px;
+    margin: 0 auto;
+}
+#nav label{
+    color: white;
+    text-align: center;
+}
+#menuBox{
+    float: left;
+}
+#logout-in-top{
+    float: right;
+}
+#logout-in-top a{
+    color: white;
+    text-decoration: none;
+}

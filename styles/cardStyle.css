@@ -1,0 +1,77 @@
+body{background: rgba(220, 220, 220, 0.27);}
+a{
+    text-decoration: none;
+}
+div{
+    padding: 2px;
+}
+#cardBox{
+    margin:0 auto;
+}
+.card{
+    display: block;
+    width: 100%;
+    margin-bottom:20px;
+    border-radius: 10px;
+    border:solid;
+    border-width: 0 0 0 10px;
+    background: white;
+}
+#card-1{
+    margin-top: 60px;
+}
+.header{
+    margin-left: 4px;
+    width: 80px;
+    float: left;
+}
+.header label{
+    font-size: 24px;
+}
+.bean{
+    margin-top: 4px;
+    display: block;
+    width: 600px;
+    height: 2.5em;
+    border-radius: 1em;
+    /*background: red;*/
+    margin-left: 80px;
+}
+.bean a{
+    padding: 4px;
+    font-size:20px;
+    width: 36px;
+    text-decoration: none;
+    background: #b32f1d;
+    color: white;
+    border-radius: 0.5em;
+}
+.bean-2 a{
+    background: #0299bf;
+}
+#endButton{
+    margin: 0 auto;
+    margin-left: 10%;
+}
+#endButton div{
+    display: inline-block;
+    padding: 2px;
+    height: 2em;
+    border-radius: 0.5em;
+    background: #025a7a;
+}
+#endButton div a {
+    color: white;
+}
+#card-1{
+    border-color:white white white #ff4326;
+}
+#card-2 {
+    border-color: white white white #27b5ff;
+}
+#card-3{
+    border-color: white white white #4bff67;
+}
+#card-4{
+    border-color: white white white #ffda22;
+}
