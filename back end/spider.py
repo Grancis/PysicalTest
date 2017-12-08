@@ -11,17 +11,6 @@ mid_url = 'http://pead.scu.edu.cn/jncx/?security_verify_data=313932302c31303830'
 data_url = 'http://pead.scu.edu.cn/jncx/tcsh2.asp'
 
 
-# 包含体侧数据
-class Data(object):
-    def __init__(self):
-        self.name = ''
-        self.datas = []
-        self.scores = []
-        self.term = []
-        self.assessment = []
-        self.suggestion = []
-
-
 def has_logined(page):
     """
     判断是否登录成功
@@ -61,54 +50,54 @@ def deal_string(string):
     return string.strip()
 
 
-def get_datas(session):
+def parse_datas(session):
     if session != None:
         soup = BeautifulSoup(session.get(data_url).content.decode('gbk'), 'lxml')
         name = soup.find('caption').text
         trs = soup.find_all('tr')[5:]
-        # datas = [[第一次], [第二次], [第三次] ...]
-        datas = []
-        data = Data()
-        for i in range(len(trs)):
-            if i % 2 == 0:
-                # 获取数据, 学期
-                tds = trs[i].find_all('td')[1:16]
-                for j in range(len(tds)):
-                    if j == 14:
-                        data.term = deal_string(tds[j].text)
-                    else:
-                        text = deal_string(tds[j].find('div').text)
-                        data.datas.append(text)
-            else:
-                # 获取分数, 总评, 建议
-                tds = trs[i].find_all('td')[1:]
-                for j in range(len(tds)):
-                    if j == 12:
-                        data.scores.append('无')
-                    elif j == 13:
-                        text = deal_string(tds[j].text)
-                        data.assessment = (text)
-                    elif j == 14:
-                        text = deal_string(tds[j].text)
-                        data.suggestion = (text)
-                    else:
-                        text = deal_string(tds[j].find('div').text)
-                        data.scores.append(text)
-                data.name = name
-                datas.append(data)
-                data = Data()
-        return datas
+        test_datas = []
+
+        # 奇数行是数据, 偶数行是得分
+        for i in range(len(trs))[0::2]:
+            data = {}
+            data['datas'] = []
+            data['scores'] = []
+            # 获取数据, 学期
+            tds = trs[i].find_all('td')[1:16]
+            for j in range(len(tds)):
+                if j == 14:
+                    data['term'] = deal_string(tds[j].text)
+                else:
+                    text = deal_string(tds[j].find('div').text)
+                    data['datas'].append(text)
+            # 获取分数, 总评, 建议
+            tds = trs[i+1].find_all('td')[1:]
+            for j in range(len(tds)):
+                if j == 12:
+                    data['scores'].append('无')
+                elif j == 13:
+                    text = deal_string(tds[j].text)
+                    data['assessment'] = text
+                elif j == 14:
+                    text = deal_string(tds[j].text)
+                    data['suggestion'] = text
+                else:
+                    text = deal_string(tds[j].find('div').text)
+                    data['scores'].append(text)
+            data['name'] = name
+            test_datas.append(data)
+        return test_datas
     else:
         print(u'登录失败')
 
 
-if __name__ == '__main__':
-    s = login_scu('2016141462313', '462313')
+def get_datas(account, password):
+    s = login_scu(account, password)
     if s:
-        for i in get_datas(s):
-            print(i.name)
-            print(i.datas)
-            print(i.scores)
-            print(i.assessment)
-            print(i.suggestion)
-            print(i.term)
+        return parse_datas(s)
+    else:
+        return None
+
+
+if __name__ == '__main__':
+    print get_datas('2016141462307', '462307')
