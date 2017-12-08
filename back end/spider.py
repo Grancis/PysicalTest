@@ -55,40 +55,37 @@ def parse_datas(session):
         soup = BeautifulSoup(session.get(data_url).content.decode('gbk'), 'lxml')
         name = soup.find('caption').text
         trs = soup.find_all('tr')[5:]
-        # test_datas = [[第一次], [第二次], [第三次] ...]
         test_datas = []
-        data = {}
-        data['datas'] = []
-        data['scores'] = []
-        data['assessment'] = []
-        data['suggestion'] = []
-        for i in range(len(trs)):
-            if i % 2 == 0:
-                # 获取数据, 学期
-                tds = trs[i].find_all('td')[1:16]
-                for j in range(len(tds)):
-                    if j == 14:
-                        data['term'] = deal_string(tds[j].text)
-                    else:
-                        text = deal_string(tds[j].find('div').text)
-                        data['datas'].append(text)
-            else:
-                # 获取分数, 总评, 建议
-                tds = trs[i].find_all('td')[1:]
-                for j in range(len(tds)):
-                    if j == 12:
-                        data['scores'].append('无')
-                    elif j == 13:
-                        text = deal_string(tds[j].text)
-                        data['assessment'] = text
-                    elif j == 14:
-                        text = deal_string(tds[j].text)
-                        data['suggestion'] = text
-                    else:
-                        text = deal_string(tds[j].find('div').text)
-                        data['scores'].append(text)
-                data['name'] = name
-                test_datas.append(data)
+
+        # 奇数行是数据, 偶数行是得分
+        for i in range(len(trs))[0::2]:
+            data = {}
+            data['datas'] = []
+            data['scores'] = []
+            # 获取数据, 学期
+            tds = trs[i].find_all('td')[1:16]
+            for j in range(len(tds)):
+                if j == 14:
+                    data['term'] = deal_string(tds[j].text)
+                else:
+                    text = deal_string(tds[j].find('div').text)
+                    data['datas'].append(text)
+            # 获取分数, 总评, 建议
+            tds = trs[i+1].find_all('td')[1:]
+            for j in range(len(tds)):
+                if j == 12:
+                    data['scores'].append('无')
+                elif j == 13:
+                    text = deal_string(tds[j].text)
+                    data['assessment'] = text
+                elif j == 14:
+                    text = deal_string(tds[j].text)
+                    data['suggestion'] = text
+                else:
+                    text = deal_string(tds[j].find('div').text)
+                    data['scores'].append(text)
+            data['name'] = name
+            test_datas.append(data)
         return test_datas
     else:
         print(u'登录失败')

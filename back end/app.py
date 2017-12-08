@@ -1,6 +1,5 @@
 # coding=utf-8
 import sys
-
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -58,11 +57,24 @@ def logout():
     return redirect(url_for('index'))
 
 
-# 返回测试数据
+# 返回测试json数据
+# 格式是一个含有JavaScript对象的列表
+# 每个JavaScript对象是一次体侧的数据
+# 例如
+# {
+#     term: '20171',
+#     name: '冉哲东',
+#     assessment: '67分，及格',
+#     datas: [身高, 体重, 肺活量, 跳远, 五十米, 台阶, 八百米, 一千米, 仰卧起坐, 引体向上, 坐位体前屈, 握力, 视力左, 视力右 ]
+#     scores:[身体形态, 肺活量, 跳远, 五十米, 台阶, 八百米, 一千米, 仰卧起坐, 引体向上, 坐位体前屈, 握力, 视力左, 视力右]
+#     suggestion: '引体向上|'
+# }
+
+
 @app.route('/query', methods=['POST'])
 def query():
     if has_login():
-        # 从本地数据库获取体侧数据
+        # 爬取体侧数据
         account = request.form.get('account', '')
         password = request.form.get('password', '')
         try:
