@@ -1,11 +1,12 @@
-body{background: rgba(220, 220, 220, 0.27);}
+body{background: rgba(220, 220, 220, 0.27);
+}
 a{
     text-decoration: none;
 }
 div{
     padding: 2px;
 }
-#cardBox{
+.cardBox{
     margin:0 auto;
 }
 .card{
@@ -17,8 +18,11 @@ div{
     border-width: 0 0 0 10px;
     background: white;
 }
-#card-1{
-    margin-top: 60px;
+.year{
+    margin-top: 0px;
+}
+#year-1{
+    margin-top: 45px;
 }
 .header{
     margin-left: 4px;
@@ -35,19 +39,28 @@ div{
     height: 2.5em;
     border-radius: 1em;
     /*background: red;*/
-    margin-left: 80px;
+    margin-left: 120px;
 }
 .bean a{
     padding: 4px;
     font-size:20px;
     width: 36px;
     text-decoration: none;
-    background: #b32f1d;
+    background: #0299bf;
     color: white;
-    border-radius: 0.5em;
+    border-radius: 6px;
 }
 .bean-2 a{
     background: #0299bf;
+}
+.beanLabel,.beanContent{
+    font-size: 20px;
+}
+.beanLabel{
+    background: #0299bf;
+    color: white;
+    padding: 3px;
+    border-radius: 6px;
 }
 #endButton{
     margin: 0 auto;
@@ -57,21 +70,24 @@ div{
     display: inline-block;
     padding: 2px;
     height: 2em;
-    border-radius: 0.5em;
-    background: #025a7a;
+    border-radius: 6px;
+    background: #0299bf;
 }
 #endButton div a {
     color: white;
 }
-#card-1{
+.card-1{
     border-color:white white white #ff4326;
 }
-#card-2 {
+.card-2 {
     border-color: white white white #27b5ff;
 }
-#card-3{
+.card-3{
     border-color: white white white #4bff67;
 }
-#card-4{
+.card-4{
     border-color: white white white #ffda22;
+}
+.card-5{
+    border-color: white white white #ff58ee;
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史数据和成绩查询</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="jslib/queryData.js"></script>
+    <script src="jslib/setWidth.js"></script>
+    <script src="jslib/general.js"></script>
+    <link rel="stylesheet" href="styles/cardStyle.css">
+    <link rel="stylesheet" href="styles/navStyle.css">
+</head>
+<body>
+<div id="nav">
+    <div id="menuBox"><input type="checkbox" id="menu" ></div>
+    <div id="titleBox"><label >飞扬-川大体侧系统</label></div>
+    <div class="logout" id="logout-in-top"><a href="" >退出</a></div>
+</div>
+<div class="cardBox" id="cardBox-1">
+    <div class="year" id="year-1">
+        <p>2017年</p>
+        <hr />
+    </div>
+    <!--每一年的数据做10个卡片-->
+    <div class="card card-1" id="card-1-1">
+        <div class="header" id="head-1-1"><label>总评</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><a href="">总分</a></div>
+            <div class="content content-1" ></div>
+        </div>
+    </div>
+    <div class="card card-2" id="card-1-2">
+        <div class="header" id="head-1-2"><label>需改进</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel" id="beanLabel-1">引体向上</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanLabel" id="beanLabel-2">坐位体前屈</label> </div>
+        </div>
+        <div class="msg msg2" >
+            <div class="bean bean-2" ><label class="beanLabel" id="beanLabel-3">引体向上</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanLabel" id="beanLabel-4">坐位体前屈</label></div>
+            <div class="content content-2" ></div>
+        </div>
+    </div>
+    <div class="card card-3" id="card-1-3">
+        <div class="header" id="head-1-3"><label>体重</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">50kg</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<div class="cardBox" id="cardBox-2">
+    <div class="year" id="year-2">
+        <p>2016年</p>
+        <hr />
+    </div>
+    <!--每一年的数据做10个卡片-->
+    <div class="card card-1" id="card-2-1">
+        <div class="header" id="head-2-1"><label>总评</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><a href="">总分</a></div>
+            <div class="content content-1" ></div>
+        </div>
+    </div>
+    <div class="card card-2" id="card-2-2">
+        <div class="header" id="head-2-2"><label>需改进</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel" id="beanLabel-1">引体向上</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanLabel" id="beanLabel-2">坐位体前屈</label> </div>
+        </div>
+        <div class="msg msg2" >
+            <div class="bean bean-2" ><label class="beanLabel" id="beanLabel-3">引体向上</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanLabel" id="beanLabel-4">坐位体前屈</label></div>
+            <div class="content content-2" ></div>
+        </div>
+    </div>
+    <div class="card card-3" id="card-2-3">
+        <div class="header" id="head-2-3"><label>体重</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">50kg</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

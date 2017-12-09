@@ -1,12 +1,12 @@
 #nav{
-    border-radius: 6px;
+    width: 100%;
     height: 36px;
     position: fixed;
     left: 0px;
     right: 0px;
     top: 0;
     padding: 4px;
-    background: #025a7a;
+    background: #0299bf;
     margin: 0 auto;
 
 }

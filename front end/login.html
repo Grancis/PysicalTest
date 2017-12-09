@@ -11,17 +11,17 @@
 <div id="container">
     <h3>四川大学体侧网站</h3>
     <div id="errorText">
-        <p id="internetError">连接失败，请检查网络</p>
+        <p id="internetError"></p>
     </div>
     <div id="loginBox">
-        <form name="loginForm">
+        <form name="loginForm" method="post" action="/back%20end/login">
         <div id="userInputBox">
             <label>账号：</label>
-            <input type="text" id="accountInput" name="user" placeholder="学号">
+            <input type="text" id="accountInput" name="account" placeholder="学号">
         </div>
         <div id="pwdInputBox">
             <label>密码：</label>
-            <input type="password" id="pwdInput" name="pwd" placeholder="体侧网站密码">
+            <input type="password" id="pwdInput" name="password" placeholder="体侧网站密码">
         </div>
          <!--<div id="buttonBox">-->
              <!--<a href="logincheck()">登录</a>-->

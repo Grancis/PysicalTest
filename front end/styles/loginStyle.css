@@ -9,7 +9,6 @@
 }
 #errorText{
     background: rgba(255, 0, 0, 0.53);
-    display: none;
     width: 360px;
     margin: 0 auto;
     border-radius: 5px;
