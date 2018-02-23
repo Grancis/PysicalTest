@@ -1,8 +1,9 @@
 body{background: rgba(220, 220, 220, 0.27);
 
 }
-a{
+a,a:hover{
     text-decoration: none;
+    color: black;
 }
 div{
     padding: 2px;
@@ -21,10 +22,10 @@ div{
     background: white;
 }
 .year{
-    margin-top: 0px;
+    margin-top:0px;
 }
 #year-1{
-    margin-top: 45px;
+    margin-top: 60px;
 }
 .header{
     margin-left: 4px;
@@ -63,20 +64,6 @@ div{
     /*color: white;*/
     padding: 3px;
     border-radius: 6px;
-}
-#endButton{
-    margin: 0 auto;
-    margin-left: 10%;
-}
-#endButton div{
-    display: inline-block;
-    padding: 2px;
-    height: 2em;
-    border-radius: 6px;
-    background: #0299bf;
-}
-#endButton div a {
-    color: white;
 }
 .card-1{
     border-color:white white white #ff4326;

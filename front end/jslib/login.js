@@ -1,5 +1,5 @@
 window.onload=function () {
-var container=document.getElementById("container");
+var container=document.getElementById("myBox");
 var accountInput=document.getElementById("accountInput");
 var pwdInput=document.getElementById("pwdInput");
 var errorBox=document.getElementById("errorBox");

@@ -15,3 +15,6 @@ window.onresize=function () {
     for (var i=0;i<cardBoxes.length;++i)
         setWidth(cardBoxes[i],640);
 }
+function jumpTo(url) {
+    window.location.href=url;
+}
