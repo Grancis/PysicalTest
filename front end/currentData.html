@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>实时测试数据查询</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="jslib/queryTestData.js"></script>
+    <script src="jslib/setWidth.js"></script>
+    <script src="jslib/general.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/cardStyle.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand" style="color: black; font-weight: bold">飞扬-川大体侧系统</span>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" >实时数据查询</a></li>
+                <li><a href="#">预约体侧</a> </li>
+                <li><a href="#">申请免测</a> </li>
+                <li><a href="#">健康建议</a> </li>
+                <li><a href="#">登出系统</a> </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="cardBox" id="cardBox-1">
+    <div class="year" id="year-1">
+        <p>正在进行的测试.....</p>
+        <hr />
+    </div>
+    <!--每一年的数据做10个卡片-->
+    <div class="card card-1" id="card-1-1">
+        <div class="header" id="head-1-1"><label>总评</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><a href="">总分</a></div>
+            <div class="content content-1" ></div>
+        </div>
+    </div>
+    <div class="card card-2" id="card-1-2">
+        <div class="header" id="head-1-2"><label>需改进</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel" id="beanLabel-1">引体向上</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanLabel" id="beanLabel-2">坐位体前屈</label> </div>
+        </div>
+        <div class="msg msg2" >
+            <div class="bean bean-2" ><label class="beanLabel" id="beanLabel-3">引体向上</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanLabel" id="beanLabel-4">坐位体前屈</label></div>
+            <div class="content content-2" ></div>
+        </div>
+    </div>
+    <div class="card card-3" id="card-1-3">
+        <div class="header" id="head-1-3"><label>体重</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">50kg</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-4" id="card-1-4">
+        <div class="header" id="head-1-4"><label>肺活量</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">****</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-5" id="card-1-5">
+        <div class="header" id="head-1-5"><label>跳远</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">***</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-6" id="card-1-6">
+        <div class="header" id="head-1-6"><label>短跑</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">***</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-7" id="card-1-7">
+        <div class="header" id="head-1-7"><label>长跑</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">***</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-8" id="card-1-8">
+        <div class="header" id="head-1-8"><label>引体向上</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">***</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+    <div class="card card-9" id="card-1-9">
+        <div class="header" id="head-1-9"><label>座位体前屈</label></div>
+        <div class="msg msg1" >
+            <div class="bean bean-1"><label class="beanLabel">测试数据：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">***</label> </div>
+            <div class="content content-1" ></div>
+            <div class="msg msg2" >
+                <div class="bean bean-2" ><label class="beanLabel">测试评分：</label>&nbsp;&nbsp;&nbsp;&nbsp;<label class="beanContent">100</label></div>
+                <div class="content content-2" ></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

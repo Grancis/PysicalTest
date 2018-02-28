@@ -1,5 +1,8 @@
+*{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
 body{background: rgba(220, 220, 220, 0.27);
-
 }
 a,a:hover{
     text-decoration: none;
@@ -57,7 +60,7 @@ div{
     /*background: #0299bf;*/
 }
 .beanLabel,.beanContent{
-    font-size: 20px;
+    font-size: 18px;
 }
 .beanLabel{
     /*background: #0299bf;*/
@@ -91,4 +94,7 @@ div{
 }
 .card-9{
     border-color: white white white #ffb13b;
+}
+#cardBox-2,#cardBox-3,#cardBox-4{
+    display: none;
 }
