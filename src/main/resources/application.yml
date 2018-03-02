@@ -1,0 +1,14 @@
+spring:
+  mvc:
+    view:
+      prefix: /pages/
+      suffix: .html
+logging:
+  path: ./
+  level: ERROR
+
+#  redis:
+#    host: localhost
+#    port: 6379
+#    database: 0
+
