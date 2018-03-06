@@ -25,8 +25,8 @@ public class Utils {
         try {
             bf = new BufferedReader(new InputStreamReader(inputStream, "gbk"));
         } catch (UnsupportedEncodingException e) {
-            logger.error("解码错误");
-            logger.error(e);
+            getLogger().error("解码错误");
+            getLogger().error(e);
         }
 
         String line;
@@ -43,8 +43,8 @@ public class Utils {
             try {
                 inputStream.close();
             } catch (IOException e) {
-                logger.error("输入流关闭异常");
-                logger.error(e);
+                getLogger().error("输入流关闭异常");
+                getLogger().error(e);
             }
         }
 
@@ -52,62 +52,8 @@ public class Utils {
 
     }
 
-    public static List<javax.servlet.http.Cookie> servletCookiesFromApacheCookies(List<org.apache.http.cookie.Cookie> cookies) {
-        List<javax.servlet.http.Cookie> servletCookies = new ArrayList<>();
-        for (org.apache.http.cookie.Cookie c :
-                cookies) {
-            javax.servlet.http.Cookie servletCookie = new javax.servlet.http.Cookie(c.getName(), c.getValue());
-            servletCookie.setPath("/data");
-            servletCookie.setMaxAge(5 * 60);
-            servletCookies.add(servletCookie);
-        }
-        return servletCookies;
-    }
-
-    public static List<java.net.HttpCookie> httpCookiesFromApacheCookies(List<org.apache.http.cookie.Cookie> cookies) {
-        List<java.net.HttpCookie> httpCookies = new ArrayList<>();
-        for (org.apache.http.cookie.Cookie c :
-                cookies) {
-            java.net.HttpCookie httpCookie = new java.net.HttpCookie(c.getName(), c.getValue());
-            httpCookie.setDomain(c.getDomain());
-            httpCookies.add(httpCookie);
-        }
-        return httpCookies;
-    }
-
-    public static List<java.net.HttpCookie> httpCookiesFromServletCookies(List<javax.servlet.http.Cookie> cookies) {
-        List<java.net.HttpCookie> httpCookies = new ArrayList<>();
-        for (javax.servlet.http.Cookie c :
-                cookies) {
-            java.net.HttpCookie httpCookie = new java.net.HttpCookie(c.getName(), c.getValue());
-            httpCookie.setDomain(c.getDomain());
-            httpCookies.add(httpCookie);
-        }
-        return httpCookies;
-    }
-
-    public static InputStream httpGet(List<java.net.HttpCookie> cookies, String getURL) {
-        HttpURLConnection connection = null;
-        try {
-            URL url = new URL(getURL);
-            connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestProperty("cookie", netHeaderString(cookies));
-            connection.connect();
-            return connection.getInputStream();
-        } catch (IOException e) {
-            // Log
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    private static String netHeaderString(List<java.net.HttpCookie> cookies) {
-        StringBuilder builder = new StringBuilder();
-        for (java.net.HttpCookie c :
-                cookies) {
-            builder.append(c.getName()).append("=").append(c.getValue()).append(";");
-        }
-        return builder.toString();
+    private static synchronized Log getLogger() {
+        return logger;
     }
 
     private static final Log logger = LogFactory.getLog(Utils.class);
