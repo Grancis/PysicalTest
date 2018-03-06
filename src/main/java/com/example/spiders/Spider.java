@@ -1,7 +1,7 @@
 package com.example.spiders;
 
 import com.example.domain.Data;
-import com.example.Utils.Utils;
+import com.example.utils.Utils;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
