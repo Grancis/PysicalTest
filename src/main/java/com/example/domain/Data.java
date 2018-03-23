@@ -15,6 +15,7 @@ public class Data {
     private String assessment;
     private List<String> dataList;
     private List<String> scores;
+    private String suggestion;
 
     public Data() {
         dataList = new ArrayList<>();
@@ -78,6 +79,4 @@ public class Data {
                 + assessment + '\n'
                 + suggestion;
     }
-
-    private String suggestion;
 }

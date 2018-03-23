@@ -15,14 +15,9 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class LoginInterceptor implements HandlerInterceptor {
     private static final String LOGIN_URL = "/login";
-    private static final String INDEX_URL = "/index";
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        // 登录界面不设置拦截
-        if (INDEX_URL.equals(httpServletRequest.getRequestURI())) {
-            return true;
-        }
         // 根据session中是否有httpClient判断是否登录
         boolean ok = httpServletRequest.getSession().getAttribute("client") != null;
 

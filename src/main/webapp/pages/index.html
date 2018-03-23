@@ -2,13 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>飞扬-川大体侧系统登录</title>
+    <link rel="stylesheet" type="text/css" href="./styles/loginStyle.css">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/jslib/login.js"></script>
+    <script src="/jslib/setWidth.js"></script>
 </head>
 <body>
-<form action="/login" method="get">
-    <input name="account">
-    <input name="password">
-    <button type="submit">OK</button>
-</form>
+<div id="myBox">
+    <div class="container-fluid">
+        <h4>四川大学体侧网站</h4>
+    <form class="bs-example bs-example-form" role="form" name="loginForm" method="get" action="/login">
+        <div class="input-group">
+            <span class="input-group-addon">账号</span>
+            <input type="text" class="form-control" placeholder="学号" name="account">
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">密码</span>
+            <input type="password" class="form-control" placeholder="体侧网站密码" name="password">
+        </div>
+    </form>
+        <br>
+        <button type="button" class="btn btn-block btn-info" onclick="loginCheck()">登录</button>
+</div>
+</div>
 </body>
 </html>
