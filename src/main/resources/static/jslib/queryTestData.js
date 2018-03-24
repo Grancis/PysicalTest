@@ -12,7 +12,7 @@ $(document).ready(function () {
     var data=new Array();//len*14 9(+1)valid
     var score=new Array();//len*13 8valid
     var suggest=new Array();//len
-    $.getJSON("/query",function (json) {
+    $.getJSON("/data",function (json) {
         var len=json.length;
         var k=0,n=0;
         //格式化json数据
@@ -20,19 +20,19 @@ $(document).ready(function () {
             term[i]=json[i].term;
             assess[i]=json[i].assessment;
             for(var j=0;j<14;++j){
-                if(json[i].datas[j]==""||j==1)
+                if(json[i].dataList[j]==""||j==1)
                     ;
                 else if(j==0)
-                    data[k++]=json[i].datas[j]+" "+json[i].datas[j+1];
+                    data[k++]=json[i].dataList[j]+" "+json[i].dataList[j+1];
                 else
-                    data[k++]=json[i].datas[j];
+                    data[k++]=json[i].dataList[j];
                 if(json[i].scores[j]=="")
                     ;
                 else
                     score[n++]=json[i].scores[j];
 
             }
-            suggest[i]=json[i],suggestion;
+            suggest[i]=json[i].suggestion;
 
         }
         //更新网页数据
