@@ -4,6 +4,9 @@
 }
 body{background: rgba(220, 220, 220, 0.27);
 }
+label{
+    display: inline-block;
+}
 a,a:hover{
     text-decoration: none;
     color: black;
@@ -95,6 +98,6 @@ div{
 .card-9{
     border-color: white white white #ffb13b;
 }
-#cardBox-2,#cardBox-3,#cardBox-4{
+.hide{
     display: none;
 }
