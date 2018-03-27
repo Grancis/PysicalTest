@@ -12,6 +12,7 @@ import java.util.List;
 public class Data {
     private String term;
     private String name;
+    private String sex;
     private String assessment;
     private List<String> dataList;
     private List<String> scores;
@@ -20,6 +21,14 @@ public class Data {
     public Data() {
         dataList = new ArrayList<>();
         scores = new ArrayList<>();
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String gender) {
+        this.sex = gender;
     }
 
     public String getTerm() {
