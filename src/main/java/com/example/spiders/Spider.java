@@ -26,9 +26,10 @@ import java.util.List;
  * @author rzd
  * @date 2018/3/1
  */
-public class Spider {
+public final class Spider {
     /**
      * 登录体育学院, 返回httpClient保存登录状态
+     *
      * @param xh 学号
      * @param xm 密码
      * @return 包含登录状态的httpClient
@@ -60,6 +61,7 @@ public class Spider {
 
     /**
      * 登出体育学院, 释放httpClient
+     *
      * @param httpClient 包含登录状态的httpClient
      * @throws IOException 爬虫运行时抛出的异常
      */
@@ -110,9 +112,17 @@ public class Spider {
             parseName(doc, data);
             parseDataRow(elements.get(trIndex), data);
             parseScoreRow(elements.get(trIndex + 1), data);
+            parseSex(data);
             dataList.add(data);
         }
+
+        // 判断性别
         return dataList;
+    }
+
+    private static void parseSex(Data data) {
+        String sex = "".equals(data.getDataList().get(6)) ? "male" : "female";
+        data.setSex(sex);
     }
 
     private static void parseName(Document doc, Data data) {
@@ -121,7 +131,8 @@ public class Spider {
 
     /**
      * 解析包含体侧数据的tr
-     * @param data 自定义的类用来保存体侧数据
+     *
+     * @param data    自定义的类用来保存体侧数据
      * @param element 包含体侧数据的tr
      */
     private static void parseDataRow(Element element, Data data) {
@@ -135,8 +146,9 @@ public class Spider {
 
     /**
      * 解析包含体侧分数的tr
+     *
      * @param element 包含体侧分数的tr
-     * @param data 自定义的类用来保存体侧数据
+     * @param data    自定义的类用来保存体侧数据
      */
     private static void parseScoreRow(Element element, Data data) {
         Elements tds = element.select("tr td:gt(0)").select(":lt(13)");
@@ -155,6 +167,9 @@ public class Spider {
 
     private static synchronized Log getLogger() {
         return logger;
+    }
+
+    private Spider() {
     }
 
     private static final String LOGIN_URL = "http://pead.scu.edu.cn/jncx/logins.asp";
